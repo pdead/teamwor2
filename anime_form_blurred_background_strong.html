@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anime Lover Community</title>
+  <style>
+    :root {
+      --bg-overlay: rgba(0,0,0,.5);
+      --card-bg: rgba(255,255,255,.95);
+      --accent1: #f97316; /* orange-500 */
+      --accent2: #ef4444; /* red-500 */
+      --accent1h: #ea580c; /* orange-600 */
+      --accent2h: #dc2626; /* red-600 */
+      --text-muted: #555;
+      --border: #d1d5db;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      background: url("https://readdy.ai/api/search-image?query=Dynamic action scene of Naruto Uzumaki in bright orange and black ninja outfit with blue eyes and blonde spiky hair, performing jutsu with swirling chakra energy, vibrant anime art style with detailed character design, Hidden Leaf Village architecture in background, cherry blossom petals floating, dramatic lighting and intense expression&width=1920&height=1080&seq=naruto-action-bg&orientation=landscape") no-repeat center center / cover fixed;
+    }
+    .overlay { position: fixed; inset: 0; background: var(--bg-overlay); }
+    .container { position: relative; z-index: 1; min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(4px);
+      width: 100%; max-width: 720px;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+    }
+    h1 { margin: 0 0 6px; font-size: clamp(24px, 4vw, 34px); text-align: center; }
+    .subtitle { text-align: center; color: var(--text-muted); margin: 0 0 20px; }
+
+    label { display: block; font-weight: 700; margin: 16px 0 6px; }
+    input, select, textarea, button {
+      width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
+      font-size: 14px; outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent1); box-shadow: 0 0 0 3px rgba(249,115,22,.15); }
+    textarea { resize: none; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } }
+
+    .btn {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      color: #fff; font-weight: 800; border: none; cursor: pointer; margin-top: 8px;
+      transition: transform .18s ease, filter .18s ease; letter-spacing: .2px;
+    }
+    .btn:hover { transform: scale(1.02); filter: brightness(1.02); background: linear-gradient(90deg, var(--accent1h), var(--accent2h)); }
+    .btn[disabled] { opacity: .6; cursor: not-allowed; }
+
+    .status { text-align: center; font-weight: 700; margin-top: 12px; color: #374151; min-height: 1.2em; }
+    .muted { color: var(--text-muted); font-size: 12px; text-align: right; margin-top: 4px; }
+
+    details { margin-top: 12px; font-size: 12px; color: #374151; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #f9fafb; padding: 10px; border-radius: 8px; border: 1px solid #e5e7eb; }
+  
+.card {
+  background: rgba(255, 255, 255, 0.6); /* frosted look */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+}
+
+input, select, textarea {
+  background: #fff; /* keep text clear */
+  backdrop-filter: none;
+}
+
+</style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="card" role="region" aria-label="Anime Lover Community form">
+      <h1>Anime Lover Community</h1>
+      <p class="subtitle">Join fellow anime enthusiasts and share your passion!</p>
+
+      <!-- MAIN FORM -->
+      <form id="animeForm" novalidate>
+        <div class="grid">
+          <div>
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name" autocomplete="name" />
+          </div>
+          <div>
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label for="favoriteAnime">Favorite Anime Series *</label>
+            <input type="text" id="favoriteAnime" name="favoriteAnime" required placeholder="e.g., Naruto, One Piece, Attack on Titan" />
+          </div>
+          <div>
+            <label for="favoriteCharacter">Favorite Character</label>
+            <input type="text" id="favoriteCharacter" name="favoriteCharacter" placeholder="e.g., Naruto Uzumaki, Luffy, Eren" />
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label for="watchingYears">Years Watching Anime</label>
+            <select id="watchingYears" name="watchingYears">
+              <option value="">Select years</option>
+              <option>Less than 1 year</option>
+              <option>1-3 years</option>
+              <option>4-7 years</option>
+              <option>8-15 years</option>
+              <option>More than 15 years</option>
+            </select>
+          </div>
+          <div>
+            <label for="animeGenre">Favorite Genre</label>
+            <select id="animeGenre" name="animeGenre">
+              <option value="">Select genre</option>
+              <option>Shonen</option>
+              <option>Seinen</option>
+              <option>Shojo</option>
+              <option>Josei</option>
+              <option>Isekai</option>
+              <option>Romance</option>
+              <option>Comedy</option>
+              <option>Horror</option>
+              <option>Mecha</option>
+              <option>Sports</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="message">Tell us about your anime journey</label>
+        <textarea id="message" name="message" rows="4" maxlength="500" placeholder="Share your favorite anime moments..."></textarea>
+        <div id="charCount" class="muted">0/500 characters</div>
+
+        <button id="submitBtn" class="btn" type="submit">Join Community</button>
+      </form>
+
+      <div class="status" id="statusMsg" aria-live="polite"></div>
+
+      <!-- HIDDEN FALLBACK FORM (CORS-safe: standard POST opens in new tab) -->
+      <form id="fallbackForm" action="https://formspree.io/f/mwpnqnjy" method="POST" target="_blank" style="display:none;"></form>
+
+      <details>
+        <summary>Debug info (optional)</summary>
+        <pre id="debug"></pre>
+      </details>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const endpoint = "https://readdy.ai/api/form/d2s738676ihulu0mpm70";
+      const form = document.getElementById("animeForm");
+      const fallbackForm = document.getElementById("fallbackForm");
+      const statusMsg = document.getElementById("statusMsg");
+      const submitBtn = document.getElementById("submitBtn");
+      const messageBox = document.getElementById("message");
+      const charCount = document.getElementById("charCount");
+      const debug = document.getElementById("debug");
+
+      function log(msg, obj) {
+        const line = `[${new Date().toLocaleTimeString()}] ${msg}` + (obj ? `\n${JSON.stringify(obj, null, 2)}` : "");
+        debug.textContent += (debug.textContent ? "\n" : "") + line;
+        console.log(msg, obj || "");
+      }
+
+      // Character counter
+      messageBox.addEventListener("input", () => {
+        charCount.textContent = `${messageBox.value.length}/500 characters`;
+      });
+
+      // Simple client-side validation helper
+      function validate() {
+        // Use built-in constraint API
+        const invalid = !form.reportValidity();
+        if (invalid) {
+          statusMsg.style.color = "#b91c1c"; // red-700
+          statusMsg.textContent = "Please fill the required fields correctly.";
+          return false;
+        }
+        // Extra email sanity check
+        const email = form.email.value.trim();
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!emailOk) {
+          statusMsg.style.color = "#b91c1c";
+          statusMsg.textContent = "Please enter a valid email address.";
+          form.email.focus();
+          return false;
+        }
+        if (messageBox.value.length > 500) {
+          statusMsg.style.color = "#b91c1c";
+          statusMsg.textContent = "Message must be 500 characters or less.";
+          messageBox.focus();
+          return false;
+        }
+        return true;
+      }
+
+      // Fallback submission via classic POST in a new tab (bypasses CORS restrictions)
+      function fallbackSubmit(fd) {
+        // Clear previous hidden inputs
+        while (fallbackForm.firstChild) fallbackForm.removeChild(fallbackForm.firstChild);
+        // Recreate hidden inputs from FormData
+        for (const [name, value] of fd.entries()) {
+          const input = document.createElement("input");
+          input.type = "hidden";
+          input.name = name;
+          input.value = value;
+          fallbackForm.appendChild(input);
+        }
+        // Submit classic form
+        fallbackForm.submit();
+        statusMsg.style.color = "#065f46"; // green-800
+        statusMsg.textContent = "Opened submission in a new tab. If you see a success page there, your entry is recorded.";
+        log("Fallback classic POST submitted (new tab)");
+      }
+
+      async function tryFetchSubmit(fd) {
+        const params = new URLSearchParams();
+        for (const [k, v] of fd.entries()) params.append(k, v);
+        submitBtn.disabled = true;
+        statusMsg.style.color = "#374151"; // gray-700
+        statusMsg.textContent = "Submitting...";  
+
+        try {
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: params.toString(),
+            // mode: "cors" // default for cross-origin; keep default
+          });
+
+          log("Fetch response", { ok: res.ok, status: res.status, type: res.type });
+
+          // If server does not allow CORS, browser may still make the request but block access.
+          // Some setups return res.type === 'opaque' when using no-cors. We are not using no-cors here on purpose.
+          if (res.ok) {
+            statusMsg.style.color = "#065f46"; // green-800
+            statusMsg.textContent = "✅ Form submitted successfully!";
+            form.reset();
+            charCount.textContent = "0/500 characters";
+            return true;
+          }
+
+          // Non-200: fall back
+          throw new Error(`Non-OK response: ${res.status}`);
+        } catch (err) {
+          log("Fetch failed; falling back", { error: String(err) });
+          return false;
+        } finally {
+          submitBtn.disabled = false;
+        }
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!validate()) return;
+
+        const fd = new FormData(form);
+
+        // Try fetch first
+        const ok = await tryFetchSubmit(fd);
+        if (!ok) {
+          // Fallback classic POST
+          fallbackSubmit(fd);
+        }
+      });
+
+      // Helpful note if page is opened from file://
+      if (location.protocol === "file:") {
+        log("Page opened via file://. Some servers block CORS from local files; fallback will open a new tab on submit.");
+      }
+    })();
+  </script>
+</body>
+</html>
